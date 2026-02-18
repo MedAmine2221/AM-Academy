@@ -35,16 +35,6 @@ export default function RootLayout({
       >
         <Providers>
           <div className="relative min-h-screen flex flex-col overflow-hidden">
-            
-            {/* Background image */}
-            <Image
-              src="/AmineJobsBG.jpg"
-              alt="Background"
-              fill
-              priority
-              className="object-cover z-0"
-            />
-
             {/* Transparent overlay over ALL background */}
             <div className="absolute inset-0 bg-white/50 backdrop-blur-sm z-10" />
 
@@ -58,7 +48,7 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://portfolio-rho-brown-aosm4qjgn0.vercel.app/en"
+                href="https://mohamed-amine-laz.vercel.app/en"
                 title="mohamed amine portfolio"
               >
                 <span className="text-default-600">Developed by</span>
