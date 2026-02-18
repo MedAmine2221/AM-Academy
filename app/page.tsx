@@ -1,6 +1,4 @@
-"use client";;
-import SearchJobComponent from "@/components/search-job-component";
-
+"use client";
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center">
@@ -19,9 +17,6 @@ export default function Home() {
           </span>
           , en Tunisie et ailleurs.
         </p>
-      </div>
-      <div className="flex items-end">
-        <SearchJobComponent />
       </div>
     </section>
   );
