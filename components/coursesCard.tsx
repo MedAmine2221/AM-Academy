@@ -77,9 +77,12 @@ export default function Course() {
           </Card>
         ))}
       </div>
-
+      {/* Page counter */}
+      <p className="text-sm text-gray-400">
+        Page {currentPage + 1} of {totalPages}
+      </p>
       {/* Pagination Controls */}
-      <div className="flex flex-row items-center gap-3 mt-2">
+      <div className="flex flex-row items-center gap-3 mb-8">
         {/* Prev button */}
         <button
           onClick={prevPage}
@@ -109,11 +112,6 @@ export default function Course() {
           ›
         </button>
       </div>
-
-      {/* Page counter */}
-      <p className="text-sm text-gray-400">
-        Page {currentPage + 1} of {totalPages}
-      </p>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card, CardHeader, CardBody, Avatar } from "@heroui/react";
 import { Rating } from "@smastrom/react-rating";
-
+import { FiGithub, FiLinkedin} from "react-icons/fi";
 export default function Teacher() {
   const [currentPage, setCurrentPage] = useState(0);
   const [rating, setRating] = useState(3);
@@ -57,7 +57,11 @@ export default function Teacher() {
             <CardBody className="px-3 py-0 text-small text-default-400">
               <p>Développeur Full Stack JS : 1 an d&apos;expérience</p>
               <div className="my-2">
-              <Rating style={{ right:5 , maxWidth: 150 }} value={rating} onChange={setRating} />
+                <Rating style={{ right:5 , maxWidth: 150 }} value={rating} onChange={setRating} />
+              </div>
+              <div className="flex flex-row items-center justify-center">
+                <FiLinkedin color="737373" size={20} className="mr-2 my-4"/>
+                <FiGithub color="#737373" size={20} className="ml-2 my-4"/>
               </div>
             </CardBody>
           </Card>
@@ -65,7 +69,10 @@ export default function Teacher() {
       </div>
 
       {/* Pagination Controls */}
-      <div className="flex flex-row items-center gap-3 mt-2">
+      <p className="text-sm text-gray-400">
+        Page {currentPage + 1} of {totalPages}
+      </p>
+      <div className="flex flex-row items-center gap-3 mb-8">
         {/* Prev button */}
         <button
           onClick={prevPage}
@@ -95,11 +102,6 @@ export default function Teacher() {
           ›
         </button>
       </div>
-
-      {/* Page counter */}
-      <p className="text-sm text-gray-400">
-        Page {currentPage + 1} of {totalPages}
-      </p>
     </div>
   );
 }
