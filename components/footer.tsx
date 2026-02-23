@@ -1,4 +1,6 @@
+"use client";
 import "@/styles/globals.css";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
@@ -13,7 +15,8 @@ export default function Footer() {
               width={80}
               height={60}
               priority
-              />
+              onClick={() => window.location.href = "/"}
+            />   
           </div>
           <p className="text-white m-6">AM Academy – High-quality courses <br/> to boost your skills and grow your expertise</p>
         </div>
@@ -34,9 +37,9 @@ export default function Footer() {
           </div>
           <div className="flex flex-col">
             <p className="text-[#f4b438] font-bold mr-10 mb-2 mt-6">Social</p>
-            <Link href={"/"} className="text-white mr-10 mt-2 hover:text-[#f4b438]">Facebook</Link>
-            <Link href={"/"} className="text-white mr-10 mt-2 hover:text-[#f4b438]">Instagram</Link>
-            <Link href={"/"} className="text-white mr-10 mt-2 hover:text-[#f4b438]">LinkedIn</Link>
+            <a href={"https://www.facebook.com/mouhamed.amine.lazreg/"} target="_blank" className="text-white mr-10 mt-2 hover:text-[#f4b438]">Facebook</a>
+            <a href={"https://www.instagram.com/mouhamedaminelz/"} target="_blank" className="text-white mr-10 mt-2 hover:text-[#f4b438]">Instagram</a>
+            <a href={"https://github.com/MedAmine2221/AM-Academy"} target="_blank" className="text-white mr-10 mt-2 hover:text-[#f4b438]">LinkedIn</a>
           </div>
           <div className="flex flex-col">
             <p className="text-[#f4b438] font-bold mr-10 mb-2 mt-6">Legal</p>
@@ -48,7 +51,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="ml-30 mt-6 mb-6">
-        <p className="text-[#f4b438]">© 2026 Ed-Circle. All rights reserved.</p>
+        <p className="text-[#f4b438]">© 2026 Ed-Circle. All rights reserved. <br /> Developed By <a href={"https://www.linkedin.com/in/mohamed-amine-lazreg-831b1817a/"} target="_blank" className="hover:text-[#f4b438]">Mouhamed Amine Lazreg</a></p>
       </div>
     </footer>
   );
