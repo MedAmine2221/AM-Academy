@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="ml-30 mt-6 mb-6">
-        <p className="text-[#f4b438]">© 2026 Ed-Circle. All rights reserved. <br /> Developed By <a href={"https://www.linkedin.com/in/mohamed-amine-lazreg-831b1817a/"} target="_blank" className="hover:text-[#f4b438]">Mouhamed Amine Lazreg</a></p>
+        <p className="text-[#f4b438]">© {new Date().getFullYear()} All rights reserved. <br /> Developed By <a href={"https://www.linkedin.com/in/mohamed-amine-lazreg-831b1817a/"} target="_blank" className="hover:text-[#f4b438]">Mouhamed Amine Lazreg</a></p>
       </div>
     </footer>
   );
