@@ -1,18 +1,22 @@
-"use client";
-
+"use client";;
 import Course from "@/components/coursesCard";
 import News from "@/components/news";
 import Teacher from "@/components/teachersCard";
-import { Button } from "@heroui/react";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center">
       <div className="w-full">
         <News /> 
       </div>
-      <div className="my-12 flex flex-col items-center gap-8 md:flex-row">
+      <motion.div 
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="my-12 flex flex-col items-center gap-8 md:flex-row"
+      >
         <div>
           <p className="text-xl text-center md:text-left">
             Welcome to <span className="font-bold text-[#1fa6a6]">AM Academy</span>, your gateway to a world of knowledge and learning. 
@@ -43,15 +47,27 @@ export default function Home() {
           height={400}
           priority
         />
-      </div>
-      <div className="flex flex-col items-center">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center justify-center"
+      >
         <p className="text-2xl font-bold text-[#1fa6a6] mb-6">Our Courses</p>
         <Course/>
-      </div>
-      <div className="flex flex-col items-center">
+      </motion.div>
+      <motion.div
+        initial={{ opacity:0, y: 50}}
+        whileInView = {{ opacity: 1, y: 0 }}
+        transition = {{ duration: 1.5 }}
+        viewport = {{ once: true }}
+        className="flex flex-col items-center justify-center"
+      >
         <p className="text-2xl font-bold text-[#1fa6a6] mb-6">Our Teachers</p>
         <Teacher/>
-      </div>
+      </motion.div>
     </section>
   );
 }

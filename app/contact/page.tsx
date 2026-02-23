@@ -2,8 +2,8 @@
 import { Button, Form, Input, Textarea } from "@heroui/react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-;
 export default function Tuto() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState<Record<string, FormDataEntryValue> | null>(null);
@@ -18,7 +18,13 @@ export default function Tuto() {
   return (
     <section className="flex flex-row items-center justify-center">
       <div className="my-12 flex flex-row items-center gap-8">
-        <div className="flex flex-row items-center gap-8">
+        <motion.div
+          initial= {{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          className="flex flex-row items-center gap-8"
+        >
             <Form className="w-full border-2 border-neutral-300 rounded-2xl p-10 items-center" onSubmit={onSubmit}>
                 <div className="flex flex-row gap-4">
                     <Input
@@ -72,14 +78,21 @@ export default function Tuto() {
                   </div>
                 )}
             </Form>
-        </div>
-        <Image
-          src="/logo.png"
-          alt=""
-          width={600}
-          height={600}
-          priority
-        />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <Image
+            src="/logo.png"
+            alt=""
+            width={600}
+            height={600}
+            priority
+          />
+        </motion.div>
       </div>
 
     </section>
