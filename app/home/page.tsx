@@ -1,6 +1,7 @@
 "use client";
 
 import Course from "@/components/coursesCard";
+import News from "@/components/news";
 import Teacher from "@/components/teachersCard";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -8,6 +9,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center">
+      <div className="w-full">
+        <News /> 
+      </div>
       <div className="my-12 flex flex-col items-center gap-8 md:flex-row">
         <div>
           <p className="text-xl text-center md:text-left">
