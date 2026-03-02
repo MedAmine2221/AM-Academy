@@ -56,16 +56,19 @@
     "clsx": "2.1.1",
     "framer-motion": "11.18.2",
     "intl-messageformat": "10.7.16",
+    "leaflet": "^1.9.4",
     "next": "15.5.9",
     "next-themes": "0.4.6",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.5.9",
     "@react-types/shared": "3.32.1",
     "@tailwindcss/postcss": "4.1.11",
+    "@types/leaflet": "^1.9.21",
     "@types/node": "20.5.7",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",

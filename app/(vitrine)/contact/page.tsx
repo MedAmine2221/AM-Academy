@@ -1,11 +1,15 @@
-"use client";
+"use client";;
 import { Button, Form, Input, Textarea } from "@heroui/react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
+import "leaflet/dist/leaflet.css";
+import dynamic from "next/dynamic";
 
 export default function Tuto() {
+  const MapWithNoSSR = dynamic(() => import("../../../components/contact/mapComponent"), { ssr: false });
+
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState<Record<string, FormDataEntryValue> | null>(null);
 
@@ -80,15 +84,16 @@ export default function Tuto() {
                     </div>
                   )}
               </div>
-              <div className="flex flex-col gap-4 ml-8">
-                <p className="text-default-700">32 rue 1er juin Kalaa Sghira, Sousse 4021 Tunisie</p>
+              <div className="flex flex-col gap-4 ml-8 justify-center items-center">
+                <p className="text-default-700 text-center">32 rue 1er juin Kalaa Sghira, Sousse 4021 Tunisie</p>
                 <a href="tel:+21653739484" className=" text-default-700 underline">+216 53 739 484</a>
                 <a href="mailto:contact@amacademy.tn" className=" text-default-700">contact@amacademy.tn</a>
                 <div className="flex flex-row gap-4 justify-center">
-                  <FiYoutube className="text-default-500 hover:text-[#1fa6a6]" size={25} />
-                  <FiFacebook className="text-default-500 hover:text-[#1fa6a6]" size={25} />
-                  <FiInstagram className="text-default-500 hover:text-[#1fa6a6]" size={25} />
+                  <FiYoutube className="text-default-500 hover:text-red-600" size={25} />
+                  <FiFacebook className="text-default-500 hover:text-blue-600" size={25} />
+                  <FiInstagram className="text-default-500 hover:text-pink-600 transition-colors duration-300" size={25} />
                 </div>
+                <MapWithNoSSR />
               </div>
             </Form>
         </motion.div>
@@ -107,7 +112,6 @@ export default function Tuto() {
           />
         </motion.div>
       </div>
-
     </section>
   );
 }
