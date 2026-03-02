@@ -1,13 +1,11 @@
-"use client";
-import { Button, Form, Input } from "@heroui/react";
+"use client";;
+import AuthForm from "@/components/auth/authForm";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
+import { FcGoogle } from "react-icons/fc"
+import { FiHome } from "react-icons/fi"
 export default function Auth() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [submitted, setSubmitted] = useState<Record<string, FormDataEntryValue> | null>(null);
   const [index, setIndex] = useState(0);
   const items = [
     "/logo-mobile-footer.png",
@@ -26,13 +24,6 @@ export default function Auth() {
     }, 3000);
     return ()=> clearInterval(interval);
   },[]);
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    setSubmitted(data as Record<string, FormDataEntryValue>);
-  };
-
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
@@ -62,46 +53,15 @@ export default function Auth() {
             AM Academy – High-quality courses <br /> to boost your skills and grow your expertise
           </p>
         </div>
-
-        {/* Right Side - Form */}
         <div className="md:w-1/2 flex flex-col items-center justify-center p-8 bg-white rounded-tr-3xl rounded-br-3xl">
+          <FiHome onClick={() => {window.location.href = "/"}} size={25} className="mb-4 text-gray-400" />
           <h2 className="text-[#0d4f4f] font-extrabold text-2xl mb-6">Login</h2>
-          <Form className="w-full flex flex-col gap-5" onSubmit={onSubmit}>
-            <Input
-              isRequired
-              errorMessage="Please enter a valid email"
-              label="Email"
-              labelPlacement="inside"
-              name="email"
-              placeholder="Enter your email"
-              type="email"
-              value={email}
-              onValueChange={setEmail}
-            />
-            <Input
-              isRequired
-              errorMessage="Please enter a valid password"
-              label="Password"
-              labelPlacement="inside"
-              name="password"
-              placeholder="Enter your password"
-              type="password"
-              value={password}
-              onValueChange={setPassword}
-            />
-            <Button
-              type="submit"
-              className="self-center bg-[#0d4f4f] hover:bg-[#1fa6a6] text-white font-bold px-6 py-2 rounded-xl transition-colors duration-300"
-            >
-              Sign In
-            </Button>
-
-            {submitted && (
-              <div className="text-sm text-gray-200 mt-3 break-words">
-                You submitted: <code>{JSON.stringify(submitted)}</code>
-              </div>
-            )}
-          </Form>
+          <AuthForm />
+          <div className="flex items-center w-full justify-center gap-2 mt-4 cursor-pointer border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100 transition-colors duration-300">
+            <FcGoogle size={25} />
+            <span className="text-gray-500 ml-2">Sign in with Google</span>
+          </div>
+          <p className="mt-6 text-gray-500">Don't have an account? <a href="#" className="text-[#0d4f4f] font-bold hover:text-[#1fa6a6] underline">Sign Up</a></p>
         </div>
       </div>
     </div>
