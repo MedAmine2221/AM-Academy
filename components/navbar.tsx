@@ -45,7 +45,7 @@ export default function NavBar() {
         <NavbarItem>
           <Link
             className="bg-[#1fa6a6] text-white px-4 py-2 rounded-xl"
-            href="#"
+            href="/signup"
           >
             Create free account
           </Link>

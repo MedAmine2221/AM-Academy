@@ -61,7 +61,7 @@ export default function Auth() {
             <FcGoogle size={25} />
             <span className="text-gray-500 ml-2">Sign in with Google</span>
           </div>
-          <p className="mt-6 text-gray-500">Don't have an account? <a href="#" className="text-[#0d4f4f] font-bold hover:text-[#1fa6a6] underline">Sign Up</a></p>
+          <p className="mt-6 text-gray-500">Don't have an account? <a href="/signup" className="text-[#0d4f4f] font-bold hover:text-[#1fa6a6] underline">Sign Up</a></p>
         </div>
       </div>
     </div>
