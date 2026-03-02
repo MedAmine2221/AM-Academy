@@ -40,7 +40,7 @@ export default function NavBar() {
           <Link color="foreground" href="#">FAQ's</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">Signin</Link>
+          <Link color="foreground" href="/auth">Signin</Link>
         </NavbarItem>
         <NavbarItem>
           <Link

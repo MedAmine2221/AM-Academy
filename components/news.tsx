@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@heroui/react";
 import { useEffect, useState } from "react";
 
 const newsItems = [
@@ -94,7 +95,6 @@ export default function News() {
               <p className="font-bold text-base md:text-lg leading-tight">
                 {news.title}
               </p>
-              <p className="text-white/70 text-xs">{news.date}</p>
             </div>
           </div>
 
@@ -107,6 +107,11 @@ export default function News() {
             <p className="text-white/80 text-sm line-clamp-2">
               {news.description}
             </p>
+            <div className="flex justify-end mt-2">
+              <Button className="w-sm mt-2 px-3 py-1 text-sm bg-[#0d4f4f] hover:bg-[#0d4f4f]/90 text-white transition-colors duration-300">
+                Inscrivez-vous maintenant avant le {news.date} 
+              </Button>
+            </div>
           </div>
         </div>
       </div>

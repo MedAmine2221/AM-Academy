@@ -4,8 +4,9 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 import '@smastrom/react-rating/style.css';
-import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -32,9 +33,15 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Providers>
-            {children}
-        </Providers>
+          <div className="relative min-h-screen flex flex-col overflow-hidden">
+            <NavBar />
+            <main className="z-20 mx-auto max-w-7xl px-6 flex-1">
+              {children}
+            </main>
+
+            {/* Footer */}
+            <Footer />
+          </div>
       </body>
     </html>
   );
