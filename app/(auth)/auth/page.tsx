@@ -54,7 +54,7 @@ export default function Auth() {
           </p>
         </div>
         <div className="md:w-1/2 flex flex-col items-center justify-center p-8 bg-white rounded-tr-3xl rounded-br-3xl">
-          <FiHome onClick={() => {window.location.href = "/"}} size={25} className="mb-4 text-gray-400" />
+          <FiHome onClick={() => {window.location.href = "/"}} size={25} className="mb-4 text-gray-400 hover:text-gray-600" />
           <h2 className="text-[#0d4f4f] font-extrabold text-2xl mb-6">Login</h2>
           <AuthForm />
           <div className="flex items-center w-full justify-center gap-2 mt-4 cursor-pointer border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100 transition-colors duration-300">
