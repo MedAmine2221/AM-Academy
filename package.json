@@ -9,6 +9,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@google/genai": "^1.44.0",
     "@heroui/accordion": "2.2.26",
     "@heroui/alert": "2.2.29",
     "@heroui/autocomplete": "2.3.31",
