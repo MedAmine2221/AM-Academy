@@ -14,31 +14,22 @@ export async function recommendation(cv: any, courses: any) {
   const maxDelay = 10000;
 
   const fullPrompt = `
-    Agis comme un conseiller pédagogique spécialisé en e-learning.
+    Agis comme un conseiller pédagogique expert en e-learning. Analyse le CV du candidat et recommande des cours pour améliorer ses compétences professionnelles.
 
-    Voici mon CV :
-    ${cv}
+    1️⃣ Lis attentivement le CV du candidat : ${cv}  
+    2️⃣ Compare les compétences du candidat avec la liste des cours disponibles : ${courses}  
+    3️⃣ Identifie les compétences manquantes ou à renforcer.  
+    4️⃣ Sélectionne uniquement des cours de la liste fournie. Ne jamais inventer de cours.  
+    5️⃣ Ne donne aucune explication, aucun commentaire, aucun classement.  
 
-    Voici la liste des cours disponibles dans l’application :
-    ${courses}
+    ⚡ Format de sortie strict (JSON valide) :  
 
-    Ta mission est de recommander uniquement des cours présents dans cette liste.
-
-    Contraintes :
-    - Tu dois choisir uniquement des cours présents dans la liste fournie.
-    - Ne jamais inventer de cours.
-    - Ne donne aucune explication.
-    - Retourne uniquement un JSON valide.
-
-    Format de réponse obligatoire :
-
-    {
-      "Nom du cours 1",
-      "Nom du cours 2",
-      "Nom du cours 3",
-      "Nom du cours 4",
+    [
+      "Nom exact du cours 1",
+      "Nom exact du cours 2",
+      "Nom exact du cours 3",
       ...
-    }
+    ]
   `;
 
   while (attempts < maxAttempts) {
